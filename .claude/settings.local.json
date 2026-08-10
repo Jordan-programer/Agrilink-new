@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(./.venv/Scripts/python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000)"
+      "Bash(./.venv/Scripts/python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000)",
+      "Bash(powershell -NoProfile -Command 'Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match '\\\\''uvicorn'\\\\'' } | Select-Object ProcessId,ParentProcessId')",
+      "Bash(npx expo-doctor *)"
     ]
   }
 }
